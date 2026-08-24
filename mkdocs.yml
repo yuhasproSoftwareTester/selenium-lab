@@ -1,0 +1,97 @@
+site_name: Selenium Lab
+site_description: Selenium WebDriver and TestNG Learning Lab
+docs_dir: src/main/java
+theme:
+  name: material
+
+  features:
+    - navigation.tabs
+    - search.highlight
+    - content.code.copy
+
+  palette:
+
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: green
+      accent: light green
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: green
+      accent: light green
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+
+    # Manual light mode
+    - scheme: default
+      primary: green
+      accent: light green
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+
+    # Manual dark mode
+    - scheme: slate
+      primary: green
+      accent: light green
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+
+extra_css:
+    - stylesheets/extra.css
+
+plugins:
+  - search
+markdown_extensions:
+  - pymdownx.highlight:
+      use_pygments: true
+      pygments_lang_class: true
+  - pymdownx.superfences
+nav:
+    - Home: index.md
+    - Selenium:
+        - Introduction: seleniumlab/a_Introduction/Lesson1.md
+        - WebDriver: seleniumlab/b_WebDriver/Lesson1.md
+        - Locator: seleniumlab/c_Locator/Lesson1.md
+        - WebDriver Concepts:
+            - WebElements: seleniumlab/d_WebDriverConcepts/a_WebElements/Lesson1.md
+            - CheckBox: seleniumlab/d_WebDriverConcepts/b_CheckBox/Lesson1.md
+            - RadioButton: seleniumlab/d_WebDriverConcepts/c_RadioButton/Lesson1.md
+            - DropDown: seleniumlab/d_WebDriverConcepts/d_DropDown/Lesson1.md
+            - Alert Popup: seleniumlab/d_WebDriverConcepts/e_AlertPopup/Lesson1.md
+            - Image: seleniumlab/d_WebDriverConcepts/f_Image/Lesson1.md
+            - Handling Multiple Windows: seleniumlab/d_WebDriverConcepts/g_HandlingMulitpleWindow/Lesson1.md
+        - Database Testing:
+            - Excel: seleniumlab/d_WebDriverConcepts/h_DataBaseTesting/excel/Lesson1.md
+            - SQL with Java: "seleniumlab/d_WebDriverConcepts/h_DataBaseTesting/sql with java/Lesson1.md"
+        - Framework:
+            - Introduction: seleniumlab/e_Framework/a_Introduction/Lesson1.md
+            - Data Driven: seleniumlab/e_Framework/b_DataDriven/Lesson1.md  
+            - Keyword Driven: seleniumlab/e_Framework/c_KeywordDriven/Lesson1.md
+            - POM: seleniumlab/e_Framework/d_POM/Lesson1.md
+            - Hybrid: seleniumlab/e_Framework/e_Hybrid/Lesson1.md
+        - Grid:
+            - Introduction: "seleniumlab/f_Grid/a_Introduction.md"
+            - Installation and Setup: "seleniumlab/f_Grid/b_Installation and setup of Hub and node.md"
+
+
+  # =========================================================
+  # TESTNG
+  # =========================================================
+
+    - TestNG:
+        - Introduction: TestNGLab/a_Introduction/Lesson1.md
+        - Annotations: TestNGLab/b_annotations/Lesson1.md
+        - Annotation Attributes: "TestNGLab/c_Annotations attribute/Lesson1.md"
+        - Groups: TestNGLab/d_groups/Lesson1.md
+        - Parameters: TestNGLab/e_parameters/Lesson1.md
+        - Listeners: TestNGLab/f_Listeners/Lesson1.md
+        - Parallel Script Execution: "TestNGLab/g_Parallel script execution/Lesson1.md"

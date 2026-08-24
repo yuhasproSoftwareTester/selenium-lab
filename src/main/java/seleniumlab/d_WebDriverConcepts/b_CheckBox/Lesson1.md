@@ -1,0 +1,172 @@
+# Checkbox Handling in Selenium 
+
+## 1. What is a Checkbox?
+
+- A **checkbox** is a small square box that can be **ticked (selected)** or **unticked (deselected)**.
+- Used for: "Remember Me", "I agree to Terms", selecting hobbies, multiple choices in a form.
+- **Key point:** Unlike radio buttons, **multiple checkboxes can be selected at the same time**.
+
+**HTML of a checkbox:**
+```html
+<input type="checkbox" id="rememberMe" name="remember">
+```
+
+---
+
+## 2. Methods Used with Checkboxes
+
+| Method | Purpose |
+|---|---|
+| `click()` | Tick or untick the checkbox (toggles) |
+| `isSelected()` | Returns `true` if ticked, `false` if not |
+| `isDisplayed()` | Is checkbox visible on page? |
+| `isEnabled()` | Is checkbox clickable (not greyed out)? |
+
+<style>
+.checkbox-playground {
+    max-width: 650px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.checkbox-group {
+    margin-bottom: 18px;
+}
+
+.checkbox-group label {
+    margin-left: 6px;
+    margin-right: 15px;
+}
+
+.checkbox-button {
+    padding: 9px 18px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    background: #eee;
+    cursor: pointer;
+}
+
+.checkbox-button:hover {
+    background: #ddd;
+}
+
+.checkbox-message {
+    margin-top: 12px;
+    font-weight: 500;
+}
+</style>
+
+<div class="checkbox-playground">
+    <h3>Checkbox Playground</h3>
+    <!-- Single Checkbox -->
+    <div class="checkbox-group">
+        <strong>Remember Me</strong><br>
+        <input
+            id="rememberMe"
+            name="remember"
+            type="checkbox">
+        <label for="rememberMe">
+            Remember Me
+        </label>
+    </div>
+    <!-- Multiple Checkboxes -->
+    <div class="checkbox-group">
+        <strong>Select Skills</strong><br>
+        <input
+            id="java"
+            name="skills"
+            type="checkbox"
+            value="Java">
+        <label for="java">Java</label>
+        <input
+            id="selenium"
+            name="skills"
+            type="checkbox"
+            value="Selenium">
+        <label for="selenium">Selenium</label>
+        <input
+            id="testng"
+            name="skills"
+            type="checkbox"
+            value="TestNG">
+        <label for="testng">TestNG</label>
+        <input
+            id="sql"
+            name="skills"
+            type="checkbox"
+            value="SQL">
+        <label for="sql">SQL</label>
+    </div>
+    <!-- Pre-selected -->
+    <div class="checkbox-group">
+        <strong>Existing Preferences</strong><br>
+        <input
+            id="emailNotifications"
+            name="notifications"
+            type="checkbox"
+            checked>
+        <label for="emailNotifications">
+            Email Notifications
+        </label>
+        <input
+            id="smsNotifications"
+            name="notifications"
+            type="checkbox">
+
+        <label for="smsNotifications">
+            SMS Notifications
+        </label>
+    </div>
+    <!-- Disabled -->
+    <div class="checkbox-group">
+        <strong>Account Settings</strong><br>
+        <input
+            id="terms"
+            name="terms"
+            type="checkbox"
+            checked
+            disabled>
+        <label for="terms">
+            Terms Accepted
+        </label>
+    </div>
+    <!-- Button -->
+    <div class="checkbox-group">
+        <button
+            id="checkButton"
+            type="button"
+            class="checkbox-button">
+            Check Selection
+        </button>
+        <p
+            id="checkboxMessage"
+            class="checkbox-message"
+            style="display:none;">
+        </p>
+    </div>
+</div>
+
+<script>
+document.getElementById("checkButton").addEventListener("click", function () {
+
+    let selected = [];
+
+    document
+        .querySelectorAll('input[name="skills"]:checked')
+        .forEach(function (checkbox) {
+            selected.push(checkbox.value);
+        });
+
+    const message = document.getElementById("checkboxMessage");
+
+    if (selected.length === 0) {
+        message.textContent = "No skills selected.";
+    } else {
+        message.textContent =
+            "Selected skills: " + selected.join(", ");
+    }
+
+    message.style.display = "block";
+});
+</script>
