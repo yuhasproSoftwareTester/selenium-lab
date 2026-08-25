@@ -8,6 +8,7 @@ theme:
     - navigation.tabs
     - search.highlight
     - content.code.copy
+    - navigation.footer
 
   palette:
 

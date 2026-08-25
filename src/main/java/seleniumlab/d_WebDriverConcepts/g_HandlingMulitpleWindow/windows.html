@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Selenium Lab - Multiple Windows Playground</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 30px;
+            background: #ffffff;
+        }
+
+        .window-playground {
+            max-width: 650px;
+            padding: 25px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .window-playground h1 {
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        .window-section {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .window-section:last-of-type {
+            border-bottom: none;
+        }
+
+        .window-section strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 17px;
+        }
+
+        .window-section p {
+            margin-top: 5px;
+            margin-bottom: 12px;
+        }
+
+        .window-button {
+            display: inline-block;
+
+            padding: 9px 16px;
+            margin-top: 5px;
+
+            border: none;
+            border-radius: 5px;
+
+            background: #1976d2;
+            color: white;
+
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .window-button:hover {
+            background: #1565c0;
+        }
+
+        .window-button:active {
+            transform: translateY(1px);
+        }
+
+        .window-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="window-playground">
+
+    <h1>Multiple Windows Playground</h1>
+
+    <!-- New Tab -->
+
+    <div class="window-section">
+
+
+        <button
+            id="newTab"
+            type="button"
+            class="window-button">
+
+            Open New Tab
+
+        </button>
+
+    </div>
+
+
+    <!-- New Window -->
+
+    <div class="window-section">
+        <button
+            id="newWindow"
+            type="button"
+            class="window-button">
+
+            Open New Window
+
+        </button>
+
+    </div>
+
+
+    <!-- Window With Elements -->
+
+    <div class="window-section">
+
+        <button
+            id="newWindowMessage"
+            type="button"
+            class="window-button">
+
+            Open Practice Window
+
+        </button>
+
+    </div>
+
+
+    <!-- Multiple Windows -->
+
+    <div class="window-section">
+
+        <div class="window-list">
+
+            <button
+                id="openWindow1"
+                type="button"
+                class="window-button">
+
+                Open Window 1
+
+            </button>
+
+
+            <button
+                id="openWindow2"
+                type="button"
+                class="window-button">
+
+                Open Window 2
+
+            </button>
+
+
+            <button
+                id="openWindow3"
+                type="button"
+                class="window-button">
+
+                Open Window 3
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   OPEN NEW TAB
+===================================================== */
+
+document
+    .getElementById("newTab")
+    .addEventListener("click", function () {
+
+        const newTab = window.open("", "_blank");
+
+        if (!newTab) {
+
+            alert("The browser blocked the new tab. Please allow pop-ups.");
+
+            return;
+
+        }
+
+        newTab.document.open();
+
+        newTab.document.write(`
+        
+            <!DOCTYPE html>
+
+            <html>
+
+            <head>
+
+                <title>Practice New Tab</title>
+
+            </head>
+
+            <body>
+
+                <h1 id="tabTitle">
+                    Practice New Tab
+                </h1>
+
+                <p id="tabMessage">
+                    This page was opened in a new browser tab.
+                </p>
+
+            </body>
+
+            </html>
+
+        `);
+
+        newTab.document.close();
+
+    });
+
+
+/* =====================================================
+   OPEN NEW WINDOW
+===================================================== */
+
+document
+    .getElementById("newWindow")
+    .addEventListener("click", function () {
+
+        const newWindow = window.open(
+            "",
+            "seleniumPracticeWindow",
+            "width=800,height=600"
+        );
+
+        if (!newWindow) {
+
+            alert("The browser blocked the new window. Please allow pop-ups.");
+
+            return;
+
+        }
+
+        newWindow.document.open();
+
+        newWindow.document.write(`
+        
+            <!DOCTYPE html>
+
+            <html>
+
+            <head>
+
+                <title>Practice New Window</title>
+
+            </head>
+
+            <body>
+
+                <h1 id="windowTitle">
+                    Practice New Window
+                </h1>
+
+                <p id="windowText">
+                    This is a separate browser window.
+                </p>
+
+            </body>
+
+            </html>
+
+        `);
+
+        newWindow.document.close();
+
+    });
+
+
+/* =====================================================
+   OPEN WINDOW WITH ELEMENTS
+===================================================== */
+
+document
+    .getElementById("newWindowMessage")
+    .addEventListener("click", function () {
+
+        const newWindow = window.open(
+            "",
+            "seleniumElementWindow",
+            "width=800,height=600"
+        );
+
+        if (!newWindow) {
+
+            alert("The browser blocked the new window. Please allow pop-ups.");
+
+            return;
+
+        }
+
+        newWindow.document.open();
+
+        newWindow.document.write(`
+        
+            <!DOCTYPE html>
+
+            <html>
+
+            <head>
+
+                <title>Practice Window With Elements</title>
+
+            </head>
+
+            <body>
+
+                <h1 id="messageTitle">
+                    Practice Window Message
+                </h1>
+
+                <p id="windowMessage">
+                    You successfully switched to the new window!
+                </p>
+
+                <br>
+
+                <label for="windowInput">
+                    Enter Something:
+                </label>
+
+                <input
+                    id="windowInput"
+                    name="windowInput"
+                    type="text"
+                    placeholder="Enter something">
+
+                <br><br>
+
+                <button
+                    id="windowButton"
+                    name="windowButton"
+                    type="button">
+
+                    Practice Button
+
+                </button>
+
+                <p id="buttonMessage"></p>
+
+            </body>
+
+            </html>
+
+        `);
+
+        newWindow.document.close();
+
+    });
+
+
+/* =====================================================
+   WINDOW 1
+===================================================== */
+
+document
+    .getElementById("openWindow1")
+    .addEventListener("click", function () {
+
+        openPracticeWindow(
+            "Practice Window 1",
+            "window1Title",
+            "window1Message",
+            "This is the first practice window."
+        );
+
+    });
+
+
+/* =====================================================
+   WINDOW 2
+===================================================== */
+
+document
+    .getElementById("openWindow2")
+    .addEventListener("click", function () {
+
+        openPracticeWindow(
+            "Practice Window 2",
+            "window2Title",
+            "window2Message",
+            "This is the second practice window."
+        );
+
+    });
+
+
+/* =====================================================
+   WINDOW 3
+===================================================== */
+
+document
+    .getElementById("openWindow3")
+    .addEventListener("click", function () {
+
+        openPracticeWindow(
+            "Practice Window 3",
+            "window3Title",
+            "window3Message",
+            "This is the third practice window."
+        );
+
+    });
+
+
+/* =====================================================
+   FUNCTION FOR MULTIPLE WINDOWS
+===================================================== */
+
+function openPracticeWindow(
+    title,
+    headingId,
+    messageId,
+    message
+) {
+
+    const newWindow = window.open(
+        "",
+        "_blank",
+        "width=700,height=500"
+    );
+
+
+    if (!newWindow) {
+
+        alert(
+            "The browser blocked the new window. Please allow pop-ups."
+        );
+
+        return;
+
+    }
+
+
+    newWindow.document.open();
+
+
+    newWindow.document.write(`
+
+        <!DOCTYPE html>
+
+        <html>
+
+        <head>
+
+            <title>${title}</title>
+
+        </head>
+
+        <body>
+
+            <h1 id="${headingId}">
+                ${title}
+            </h1>
+
+            <p id="${messageId}">
+                ${message}
+            </p>
+
+        </body>
+
+        </html>
+
+    `);
+
+
+    newWindow.document.close();
+
+}
+
+</script>
+
+
+</body>
+
+</html>
