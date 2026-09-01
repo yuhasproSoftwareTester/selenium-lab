@@ -56,7 +56,11 @@ sel.selectByIndex(2);               // ③ by position (starts from 0!)
 | `selectByValue()` | `value` attribute in HTML | `"IN"` |
 | `selectByIndex()` | Position number | `0` = first option |
 
+<<<<<<< HEAD
 >  Prefer `selectByVisibleText()` or `selectByValue()` — **index is risky** because option order can change.
+=======
+> 💡 Prefer `selectByVisibleText()` or `selectByValue()` — **index is risky** because option order can change.
+>>>>>>> 7f2cabfad0815362eac24d0f2599aa2c5f388645
 
 ---
 
