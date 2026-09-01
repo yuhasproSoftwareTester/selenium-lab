@@ -1,0 +1,134 @@
+
+<style>
+.image-playground {
+    max-width: 650px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.image-group {
+    margin-bottom: 20px;
+}
+
+.practice-image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border: 1px solid #999;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.image-button {
+    padding: 9px 18px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    background: #eee;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.image-button:hover {
+    background: #ddd;
+}
+
+.image-result {
+    margin-top: 15px;
+}
+</style>
+
+<div class="image-playground">
+
+    <h3>Image & Screenshot Playground</h3>
+
+    <!-- Image 1 -->
+    <div class="image-group">
+
+        <img
+            id="seleniumLogo"
+            class="practice-image"
+            src="../f_Image/download.png"
+            alt="Selenium Logo">
+
+    </div>
+
+    <!-- Image 2 -->
+    <div class="image-group">
+
+        <img
+            id="secondImage"
+            class="practice-image"
+            src="../f_Image/download.png"
+            alt="Practice Image">
+
+    </div>
+
+    <!-- Buttons -->
+    <div class="image-group">
+
+        <button
+            id="imageInfoButton"
+            type="button"
+            class="image-button">
+
+            Get Image Information
+
+        </button>
+
+        <button
+            id="imageVisibilityButton"
+            type="button"
+            class="image-button">
+
+            Check Image
+
+        </button>
+
+    </div>
+
+    <p
+        id="imageResult"
+        class="image-result">
+    </p>
+
+</div>
+
+<script>
+document.getElementById("imageInfoButton").addEventListener("click", function () {
+
+    const image =
+        document.getElementById("seleniumLogo");
+
+    const src =
+        image.getAttribute("src");
+
+    const alt =
+        image.getAttribute("alt");
+
+    const width =
+        image.getSize ? image.offsetWidth : 0;
+
+    const height =
+        image.offsetHeight;
+
+    document.getElementById("imageResult").textContent =
+        "Alt: " + alt +
+        " | Width: " + width +
+        " | Height: " + height;
+
+});
+
+
+document.getElementById("imageVisibilityButton").addEventListener("click", function () {
+
+    const image =
+        document.getElementById("seleniumLogo");
+
+    document.getElementById("imageResult").textContent =
+        image.complete
+            ? "Image is loaded."
+            : "Image is not loaded.";
+
+});
+</script>

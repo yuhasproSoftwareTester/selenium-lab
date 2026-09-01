@@ -1,0 +1,160 @@
+<style>
+.alert-playground {
+    max-width: 650px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.alert-group {
+    margin-bottom: 15px;
+}
+
+.alert-button {
+    padding: 10px 18px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #999;
+    border-radius: 5px;
+    background: #eee;
+    cursor: pointer;
+}
+
+.alert-button:hover {
+    background: #ddd;
+}
+
+.alert-result {
+    margin-top: 15px;
+    font-weight: 500;
+}
+</style>
+
+<div class="alert-playground">
+
+    <h3>Alert Popup Playground</h3>
+
+    <!-- Simple Alert -->
+    <div class="alert-group">
+
+        <button
+            id="simpleAlert"
+            type="button"
+            class="alert-button">
+
+            Simple Alert
+
+        </button>
+
+    </div>
+
+    <!-- Confirmation Alert -->
+    <div class="alert-group">
+
+        <button
+            id="confirmAlert"
+            type="button"
+            class="alert-button">
+
+            Confirmation Alert
+
+        </button>
+
+    </div>
+
+    <!-- Prompt Alert -->
+    <div class="alert-group">
+
+        <button
+            id="promptAlert"
+            type="button"
+            class="alert-button">
+
+            Prompt Alert
+
+        </button>
+
+    </div>
+
+    <!-- Normal Button -->
+    <div class="alert-group">
+
+        <button
+            id="normalButton"
+            type="button"
+            class="alert-button">
+
+            Normal Button
+
+        </button>
+
+    </div>
+
+    <p
+        id="alertResult"
+        class="alert-result">
+    </p>
+</div>
+
+<script>
+
+document.getElementById("simpleAlert").addEventListener("click", function () {
+
+    alert("Registration completed successfully!");
+
+});
+
+
+document.getElementById("confirmAlert").addEventListener("click", function () {
+
+    let result = confirm("Are you sure you want to continue?");
+
+    const message =
+        document.getElementById("alertResult");
+
+    if (result) {
+
+        message.textContent =
+            "You clicked OK.";
+
+    } else {
+
+        message.textContent =
+            "You clicked Cancel.";
+
+    }
+
+});
+
+
+document.getElementById("promptAlert").addEventListener("click", function () {
+
+    let name =
+        prompt("Enter your name:");
+
+    const message =
+        document.getElementById("alertResult");
+
+    if (name === null) {
+
+        message.textContent =
+            "Prompt was cancelled.";
+
+    } else {
+
+        message.textContent =
+            "Hello, " + name + "!";
+
+    }
+
+});
+
+
+document.getElementById("normalButton").addEventListener("click", function () {
+
+    document.getElementById("alertResult").textContent =
+        "This is a normal HTML button. No alert was created.";
+
+});
+
+</script>
