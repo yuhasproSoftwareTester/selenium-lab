@@ -84,12 +84,6 @@ nav:
         - Grid:
             - Introduction: "seleniumlab/f_Grid/a_Introduction.md"
             - Installation and Setup: "seleniumlab/f_Grid/b_Installation and setup of Hub and node.md"
-
-
-  # =========================================================
-  # TESTNG
-  # =========================================================
-
     - TestNG:
         - Introduction: TestNGLab/a_Introduction/Lesson1.md
         - Annotations: TestNGLab/b_annotations/Lesson1.md
@@ -98,3 +92,24 @@ nav:
         - Parameters: TestNGLab/e_parameters/Lesson1.md
         - Listeners: TestNGLab/f_Listeners/Lesson1.md
         - Parallel Script Execution: "TestNGLab/g_Parallel script execution/Lesson1.md"
+    - Test Area: 
+        - Level1: TestArena/level01.md
+        - Level2: TestArena/level02.md
+        - Level3: TestArena/level03.md
+        - Level4: TestArena/level04.md
+        - Level5: TestArena/level05.md
+        - Level6: TestArena/level06.md
+        - Level7: TestArena/level07.md
+        - Level8: TestArena/level08.md
+        - Level9: TestArena/level09.md
+        - Level10: TestArena/level10.md
+        - Level11: TestArena/level11.md
+        - Level12: TestArena/level12.md
+        - Level13: TestArena/level13.md
+        - Level14: TestArena/level14.md
+        - Level15: TestArena/level15.md
+        - Level16: TestArena/level16.md
+        - Level17: TestArena/level17.md
+        - Level18: TestArena/level18.md
+        - Level19: TestArena/level19.md
+        - Level20: TestArena/level20.md

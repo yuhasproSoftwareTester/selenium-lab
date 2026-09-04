@@ -191,3 +191,28 @@
 .playground-button:hover {
     background: #388e3c;
 }
+
+/* Selenium Lab compact text */
+.selenium-game {
+    font-size: 13px;
+}
+
+.selenium-game h1 {
+    font-size: 22px;
+}
+
+.selenium-game h2 {
+    font-size: 18px;
+}
+
+.selenium-game h3 {
+    font-size: 15px;
+}
+
+.selenium-game p {
+    font-size: 13px;
+}
+
+.selenium-game li {
+    font-size: 13px;
+}
