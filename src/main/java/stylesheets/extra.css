@@ -216,3 +216,25 @@
 .selenium-game li {
     font-size: 13px;
 }
+.selenium-game .key-box {
+    display: none;
+    max-width: 450px;
+    margin-top: 10px;
+    padding: 8px 10px;
+    border-left: 3px solid #16a34a;
+    background: #f0fdf4;
+    color: #1f2937;
+    font-size: 12px;
+}
+
+.selenium-game .key-box strong,
+.selenium-game .key-box p,
+.selenium-game .key-box .key {
+    color: #1f2937;
+}
+
+.selenium-game .key {
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: bold;
+}
